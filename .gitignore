@@ -20,6 +20,9 @@
 .DS_Store
 *.pem
 
+# photos source folder (use public/gallery/ for web assets)
+/photos
+
 # debug
 npm-debug.log*
 yarn-debug.log*
