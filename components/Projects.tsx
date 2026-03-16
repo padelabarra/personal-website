@@ -58,7 +58,7 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Projects</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-16">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16">
           What I&apos;ve Shipped
         </h2>
 
@@ -71,7 +71,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="bg-surface border border-border rounded-xl p-6 flex flex-col hover:border-accent/40 transition-colors duration-200 group"
             >
-              <h3 className="font-display font-bold text-text text-lg mb-3 group-hover:text-accent transition-colors duration-200">
+              <h3 className="font-display font-bold text-gray-900 text-lg mb-3 group-hover:text-accent transition-colors duration-200">
                 {p.name}
               </h3>
               <p className="text-muted text-sm leading-relaxed flex-1 mb-4">{p.description}</p>

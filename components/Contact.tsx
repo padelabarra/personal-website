@@ -24,7 +24,7 @@ export default function Contact() {
         className="max-w-2xl mx-auto text-center"
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Contact</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-6">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Let&apos;s Talk
         </h2>
         <p className="text-muted mb-12">
@@ -35,7 +35,7 @@ export default function Contact() {
         <div className="flex justify-center gap-3 flex-wrap mb-16">
           <a
             href="mailto:pedro.de.la.barra.2026@anderson.ucla.edu"
-            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-text transition-all duration-200 text-sm font-mono"
+            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-gray-900 transition-all duration-200 text-sm font-mono"
           >
             ✉ Email
           </a>
@@ -43,7 +43,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/pedro-de-la-barra/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-text transition-all duration-200 text-sm font-mono"
+            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-gray-900 transition-all duration-200 text-sm font-mono"
           >
             in LinkedIn ↗
           </a>
@@ -51,7 +51,7 @@ export default function Contact() {
             href="https://github.com/padelabarra"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-text transition-all duration-200 text-sm font-mono"
+            className="flex items-center gap-2 px-5 py-3 bg-surface border border-border hover:border-accent rounded-lg text-muted hover:text-gray-900 transition-all duration-200 text-sm font-mono"
           >
             ⌥ GitHub ↗
           </a>
@@ -65,7 +65,7 @@ export default function Contact() {
             required
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-text placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors"
+            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-gray-900 placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors"
           />
           <input
             type="email"
@@ -73,7 +73,7 @@ export default function Contact() {
             required
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-text placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors"
+            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-gray-900 placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors"
           />
           <textarea
             placeholder="Your message"
@@ -81,7 +81,7 @@ export default function Contact() {
             rows={5}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-text placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors resize-none"
+            className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-gray-900 placeholder:text-muted font-body focus:outline-none focus:border-accent transition-colors resize-none"
           />
           <button
             type="submit"

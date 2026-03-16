@@ -41,7 +41,7 @@ export default function Nav() {
               <a
                 href={link.href}
                 className={`text-sm font-body transition-colors duration-200 ${
-                  scrolled ? 'text-muted hover:text-text' : 'text-white/80 hover:text-white'
+                  scrolled ? 'text-muted hover:text-gray-900' : 'text-white/80 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -52,7 +52,7 @@ export default function Nav() {
 
         <button
           className={`md:hidden transition-colors p-2 ${
-            scrolled ? 'text-muted hover:text-text' : 'text-white/80 hover:text-white'
+            scrolled ? 'text-muted hover:text-gray-900' : 'text-white/80 hover:text-white'
           }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
@@ -77,7 +77,7 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-2 text-muted hover:text-text transition-colors"
+                  className="block py-2 text-muted hover:text-gray-900 transition-colors"
                 >
                   {link.label}
                 </a>

@@ -42,7 +42,7 @@ export default function Skills() {
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Skills</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-16">Toolkit</h2>
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16">Toolkit</h2>
 
         <div className="space-y-10">
           {skillGroups.map((group, i) => (

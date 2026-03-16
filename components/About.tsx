@@ -22,7 +22,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">About</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-8">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-8">
           Engineer. PM. Builder.
         </h2>
 
@@ -42,7 +42,7 @@ export default function About() {
               className="bg-surface border border-border rounded-xl p-5 hover:border-accent/30 transition-colors duration-200"
             >
               <div className="font-display text-3xl font-bold text-accent mb-1">{s.value}</div>
-              <div className="font-body font-medium text-text text-sm mb-1">{s.label}</div>
+              <div className="font-body font-medium text-gray-900 text-sm mb-1">{s.label}</div>
               <div className="text-muted text-xs leading-tight">{s.sub}</div>
             </motion.div>
           ))}

@@ -46,7 +46,7 @@ export default function Education() {
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Education</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-16">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16">
           Academic Foundation
         </h2>
 
@@ -62,8 +62,8 @@ export default function Education() {
               <p className="text-muted font-mono text-xs mb-3 tracking-wide">
                 {s.period} · {s.location}
               </p>
-              <h3 className="font-display font-bold text-text text-xl mb-1">{s.shortName}</h3>
-              <p className="text-text/60 text-sm mb-2">{s.school}</p>
+              <h3 className="font-display font-bold text-gray-900 text-xl mb-1">{s.shortName}</h3>
+              <p className="text-gray-900/60 text-sm mb-2">{s.school}</p>
               <p className="text-accent font-body font-medium mb-3">{s.degree}</p>
               <p className="text-muted text-sm italic mb-5 pb-5 border-b border-border">
                 {s.highlight}

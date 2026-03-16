@@ -11,19 +11,19 @@ const photos = [
   },
   {
     src: '/gallery/photo-2.jpg',
-    caption: 'Abraham Lake Summit — Alberta, Canada',
+    caption: 'Forest Trail — Pacific Northwest',
   },
   {
     src: '/gallery/photo-3.jpg',
-    caption: 'The Narrows — Zion National Park, Utah',
+    caption: 'Yosemite National Park — California',
   },
   {
     src: '/gallery/photo-4.jpg',
-    caption: 'Glacier Viewpoint — Jasper National Park, Canada',
+    caption: 'Abraham Lake Summit — Alberta, Canada',
   },
   {
     src: '/gallery/photo-5.jpg',
-    caption: 'Hanging Bridges Trail — Arenal, Costa Rica',
+    caption: 'Coastal Dunes — Chile',
   },
 ]
 
@@ -55,7 +55,7 @@ export default function PhotoSlider() {
   return (
     <section className="py-24 max-w-6xl mx-auto px-6">
       <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Beyond the Screen</p>
-      <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-16">
+      <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16">
         Life Outside Work
       </h2>
 

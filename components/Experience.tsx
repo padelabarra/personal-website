@@ -77,7 +77,7 @@ export default function Experience() {
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Experience</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text mb-16">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16">
           Where I&apos;ve Built
         </h2>
 
@@ -102,7 +102,7 @@ export default function Experience() {
                 <div className="bg-surface border border-border rounded-xl p-6 hover:border-accent/40 transition-colors duration-200">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                     <div>
-                      <span className="font-display font-bold text-text text-xl">{job.company}</span>
+                      <span className="font-display font-bold text-gray-900 text-xl">{job.company}</span>
                       <span className="text-muted/50 mx-2">·</span>
                       <span className="font-body font-medium text-accent text-sm md:text-base">
                         {job.role}
