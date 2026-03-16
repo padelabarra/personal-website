@@ -37,12 +37,12 @@ export default function Hero() {
   }, [displayed, typing, index])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#192635]">
       {/* Animated gradient mesh */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-2xl animate-pulse"
+          className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-blue-500/5 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: '1s' }}
         />
         <div
@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <motion.p
-              className="text-accent font-mono text-sm tracking-widest uppercase mb-4"
+              className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -69,20 +69,20 @@ export default function Hero() {
               Los Angeles, CA · Open to Seattle
             </motion.p>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-text leading-none mb-6 tracking-tight">
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-none mb-6 tracking-tight">
               Pedro
               <br />
-              <span className="text-text/80">de la Barra</span>
+              <span className="text-white/80">de la Barra</span>
             </h1>
 
             <div className="h-8 mb-4 flex items-center">
-              <span className="font-mono text-accent text-base md:text-lg">
+              <span className="font-mono text-blue-400 text-base md:text-lg">
                 {displayed}
                 <span className="animate-pulse ml-0.5">|</span>
               </span>
             </div>
 
-            <p className="text-muted text-lg mb-10 max-w-md leading-relaxed">
+            <p className="text-white/60 text-lg mb-10 max-w-md leading-relaxed">
               Building at the intersection of AI, data, and product.
             </p>
 
@@ -97,32 +97,32 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/pedro-de-la-barra/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-border hover:border-accent text-muted hover:text-text font-body font-medium rounded-lg transition-all duration-200"
+                className="px-6 py-3 border border-white/20 hover:border-white/50 text-white/70 hover:text-white font-body font-medium rounded-lg transition-all duration-200"
               >
                 LinkedIn ↗
               </a>
             </div>
           </motion.div>
 
-          {/* Photo placeholder */}
+          {/* Profile photo */}
           <motion.div
             className="order-1 md:order-2 flex-shrink-0"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           >
-            <div className="photo-placeholder relative w-56 h-56 md:w-72 md:h-72">
-              <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-accent/30">
+            <div className="relative w-56 h-56 md:w-72 md:h-72">
+              <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-white/20">
                 <Image
                   src="/pedro-photo.jpg"
-                  alt="Pedro de la Barra at Horseshoe Bend"
+                  alt="Pedro de la Barra"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   priority
                 />
               </div>
-              <div className="absolute -inset-3 rounded-full border border-accent/20" />
-              <div className="absolute -inset-6 rounded-full border border-accent/10" />
+              <div className="absolute -inset-3 rounded-full border border-white/10" />
+              <div className="absolute -inset-6 rounded-full border border-white/5" />
             </div>
           </motion.div>
         </div>
@@ -134,9 +134,9 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
         >
-          <div className="w-5 h-8 border border-muted/30 rounded-full flex justify-center pt-1.5">
+          <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
             <motion.div
-              className="w-1 h-1.5 bg-muted/50 rounded-full"
+              className="w-1 h-1.5 bg-white/30 rounded-full"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
             />

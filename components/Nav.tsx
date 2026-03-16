@@ -25,7 +25,9 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-bg/90 backdrop-blur-md border-b border-border' : 'bg-transparent'
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-border shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -38,7 +40,9 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-body text-muted hover:text-text transition-colors duration-200"
+                className={`text-sm font-body transition-colors duration-200 ${
+                  scrolled ? 'text-muted hover:text-text' : 'text-white/80 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -47,7 +51,9 @@ export default function Nav() {
         </ul>
 
         <button
-          className="md:hidden text-muted hover:text-text transition-colors p-2"
+          className={`md:hidden transition-colors p-2 ${
+            scrolled ? 'text-muted hover:text-text' : 'text-white/80 hover:text-white'
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
