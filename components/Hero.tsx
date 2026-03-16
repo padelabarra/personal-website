@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const subtitles = [
   'Senior PM–Technical @ Amazon',
@@ -110,15 +111,18 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           >
-            {/* TODO: Replace with /public/pedro-photo.jpg */}
             <div className="photo-placeholder relative w-56 h-56 md:w-72 md:h-72">
-              <div className="absolute inset-0 rounded-full bg-accent/10 border-2 border-accent/20 flex items-center justify-center">
-                <span className="font-display text-5xl md:text-6xl font-bold text-accent/30 select-none">
-                  PdlB
-                </span>
+              <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-accent/30">
+                <Image
+                  src="/pedro-photo.jpg"
+                  alt="Pedro de la Barra at Horseshoe Bend"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
-              <div className="absolute -inset-3 rounded-full border border-accent/10" />
-              <div className="absolute -inset-6 rounded-full border border-accent/5" />
+              <div className="absolute -inset-3 rounded-full border border-accent/20" />
+              <div className="absolute -inset-6 rounded-full border border-accent/10" />
             </div>
           </motion.div>
         </div>
