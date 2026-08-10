@@ -76,6 +76,15 @@ Security notes baked into the script:
 - **`README.md`**: add a short "Projects data" section pointing to `docs/PROJECTS.md`.
 - **This spec**: committed at `docs/superpowers/specs/2026-08-10-dynamic-projects-design.md`.
 
+## Documentation maintenance rule
+
+Any change to this feature — now or in the future (schema changes, script behavior changes, new tag mappings, new exclude entries, changes to how `liveUrl`/`githubUrl` are resolved, etc.) — must be reflected in every living Markdown doc in the project, not just the code:
+
+- `README.md`
+- `docs/PROJECTS.md`
+
+Dated point-in-time documents (this spec, the implementation plan, and any other file under `docs/superpowers/specs/` or `docs/superpowers/plans/`) are historical records of a decision made on a given date and are not rewritten after the fact — they stay as-is once committed. "All MD" for maintenance purposes means the living reference docs above, which must always describe the system as it currently behaves. Whoever (human or agent) makes a future change to the projects-sync feature is responsible for updating both files in the same change, not as a follow-up.
+
 ## Out of scope
 
 - No automated/CI-triggered sync — this is a manually re-run local script, matching the user's confirmed workflow ("re-trigger the run to upload the data").
