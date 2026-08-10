@@ -90,8 +90,10 @@ function main() {
   const existing = readJsonIfExists(MANIFEST_PATH) || []
   const { entries: merged, added, removed } = mergeManifest(existing, discovered)
 
-  fs.mkdirSync(path.dirname(MANIFEST_PATH), { recursive: true })
-  fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(merged, null, 2)}\n`)
+  if (added.length > 0 || removed.length > 0) {
+    fs.mkdirSync(path.dirname(MANIFEST_PATH), { recursive: true })
+    fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(merged, null, 2)}\n`)
+  }
 
   if (added.length > 0) {
     console.log(`Added ${added.length} new project(s): ${added.join(', ')}`)
