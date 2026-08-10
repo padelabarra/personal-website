@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "apocrypha",
+    "name": "Apocrypha",
+    "description": "Venture project built during MBA. Knowledge graph middleware for enterprise AI agents — contextualizing fragmented data for LLM-powered workflows. Took to enterprise pilot stage with Domino's.",
+    "tags": ["Python", "FastAPI", "LangChain", "RAG", "Knowledge Graphs"],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "manual",
+    "draft": false
+  },
+  {
+    "slug": "banking-classification-ml",
+    "name": "BankingClassification ML",
+    "description": "Machine learning pipeline for banking transaction classification. Hybrid rule-based + TF-IDF + Logistic Regression model with Streamlit dashboard for review and analytics.",
+    "tags": ["Python", "sklearn", "Pandas", "SQLite", "Streamlit"],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra",
+    "source": "manual",
+    "draft": false
+  },
+  {
+    "slug": "mbi-financial-platform",
+    "name": "MBI Financial Platform",
+    "description": "Bloomberg BQL-powered dashboards and Python automation tools for a $1B+ AUM investment firm. Portfolio analytics, digital client enrollment flows, and international fund infrastructure.",
+    "tags": ["Python", "Bloomberg API", "Power BI", "SQL"],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra",
+    "source": "manual",
+    "draft": false
+  },
+  {
+    "slug": "datacamp-ml-track",
+    "name": "DataCamp ML Track",
+    "description": "Completed ML Scientist Career Track — full series of Jupyter notebook exercises and projects covering supervised learning, NLP, tree-based models, and deep learning.",
+    "tags": ["Python", "Jupyter", "sklearn", "pandas", "NLP"],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra",
+    "source": "manual",
+    "draft": false
+  },
+  {
+    "slug": "allfunds-investment-platform",
+    "name": "AllFunds Investment Platform",
+    "description": "Scaled AUM from $18M to $54M in 8 months as Product Owner. Defined product vision, pricing strategy, GTM roadmap, and built quantitative fund selection framework analyzing 85K+ securities.",
+    "tags": ["Product Strategy", "FinTech", "Operations", "Fund Selection"],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "manual",
+    "draft": false
+  }
+]
