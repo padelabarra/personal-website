@@ -5,6 +5,8 @@ import {
   sanitizeGitRemoteUrl,
   extractReadmeDescription,
   detectTags,
+  buildAutoEntry,
+  mergeManifest,
 } from './sync-projects-lib.mjs'
 
 test('prettifyName converts kebab and snake case to Title Case', () => {
@@ -73,4 +75,126 @@ test('detectTags adds Python for pyproject or requirements files', () => {
 
 test('detectTags returns empty array when nothing detected', () => {
   assert.deepEqual(detectTags({}), [])
+})
+
+test('buildAutoEntry produces a draft auto entry with liveUrl always null', () => {
+  const entry = buildAutoEntry({
+    slug: 'fitness-tracker',
+    name: 'Fitness Tracker',
+    description: 'A fitness tracking app.',
+    tags: ['Next.js'],
+    githubUrl: 'https://github.com/padelabarra/fitness-tracker',
+  })
+
+  assert.deepEqual(entry, {
+    slug: 'fitness-tracker',
+    name: 'Fitness Tracker',
+    description: 'A fitness tracking app.',
+    tags: ['Next.js'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/padelabarra/fitness-tracker',
+    source: 'auto',
+    draft: true,
+  })
+})
+
+test('mergeManifest adds new auto entries and preserves manual entries untouched', () => {
+  const manual = {
+    slug: 'apocrypha',
+    name: 'Apocrypha',
+    description: 'x',
+    tags: [],
+    liveUrl: null,
+    githubUrl: null,
+    source: 'manual',
+    draft: false,
+  }
+  const discovered = [
+    buildAutoEntry({
+      slug: 'fitness-tracker',
+      name: 'Fitness Tracker',
+      description: 'desc',
+      tags: ['Next.js'],
+      githubUrl: 'https://github.com/padelabarra/fitness-tracker',
+    }),
+  ]
+
+  const result = mergeManifest([manual], discovered)
+
+  assert.deepEqual(result.added, ['fitness-tracker'])
+  assert.deepEqual(result.removed, [])
+  assert.equal(result.entries.length, 2)
+  assert.deepEqual(result.entries[0], manual)
+  assert.equal(result.entries[1].slug, 'fitness-tracker')
+  assert.equal(result.entries[1].draft, true)
+})
+
+test('mergeManifest never overwrites an existing auto entry even if the candidate differs', () => {
+  const existingAuto = {
+    slug: 'fitness-tracker',
+    name: 'Hand-Edited Name',
+    description: 'Hand-written description',
+    tags: ['Custom'],
+    liveUrl: 'https://fitness.example.com',
+    githubUrl: 'https://github.com/padelabarra/fitness-tracker',
+    source: 'auto',
+    draft: false,
+  }
+  const candidate = buildAutoEntry({
+    slug: 'fitness-tracker',
+    name: 'Fitness Tracker',
+    description: 'freshly scanned description',
+    tags: ['Next.js'],
+    githubUrl: 'https://github.com/padelabarra/fitness-tracker',
+  })
+
+  const result = mergeManifest([existingAuto], [candidate])
+
+  assert.deepEqual(result.entries, [existingAuto])
+  assert.deepEqual(result.added, [])
+})
+
+test('mergeManifest removes auto entries whose folder disappeared and reports them', () => {
+  const staleAuto = {
+    slug: 'old-project',
+    name: 'Old Project',
+    description: '',
+    tags: [],
+    liveUrl: null,
+    githubUrl: null,
+    source: 'auto',
+    draft: true,
+  }
+
+  const result = mergeManifest([staleAuto], [])
+
+  assert.deepEqual(result.entries, [])
+  assert.deepEqual(result.removed, ['old-project'])
+})
+
+test('mergeManifest sorts auto entries alphabetically by slug after manual entries', () => {
+  const manual = {
+    slug: 'apocrypha',
+    name: 'Apocrypha',
+    description: '',
+    tags: [],
+    liveUrl: null,
+    githubUrl: null,
+    source: 'manual',
+    draft: false,
+  }
+  const discovered = [
+    buildAutoEntry({ slug: 'taskflow', name: 'Taskflow', description: '', tags: [], githubUrl: null }),
+    buildAutoEntry({
+      slug: 'fitness-tracker',
+      name: 'Fitness Tracker',
+      description: '',
+      tags: [],
+      githubUrl: null,
+    }),
+  ]
+
+  const result = mergeManifest([manual], discovered)
+
+  assert.deepEqual(result.entries.map((e) => e.slug), ['apocrypha', 'fitness-tracker', 'taskflow'])
 })

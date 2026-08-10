@@ -104,3 +104,52 @@ export function detectTags({
 
   return Array.from(tags)
 }
+
+export function buildAutoEntry({ slug, name, description, tags, githubUrl }) {
+  return {
+    slug,
+    name,
+    description,
+    tags,
+    liveUrl: null,
+    githubUrl: githubUrl ?? null,
+    source: 'auto',
+    draft: true,
+  }
+}
+
+export function mergeManifest(existingEntries, discoveredAutoEntries) {
+  const existingAutoBySlug = new Map(
+    existingEntries.filter((e) => e.source === 'auto').map((e) => [e.slug, e])
+  )
+  const discoveredSlugs = new Set(discoveredAutoEntries.map((e) => e.slug))
+  const manualEntries = existingEntries.filter((e) => e.source === 'manual')
+
+  const autoEntries = []
+  const added = []
+
+  for (const candidate of discoveredAutoEntries) {
+    const existing = existingAutoBySlug.get(candidate.slug)
+    if (existing) {
+      autoEntries.push(existing)
+    } else {
+      autoEntries.push(candidate)
+      added.push(candidate.slug)
+    }
+  }
+
+  const removed = []
+  for (const slug of existingAutoBySlug.keys()) {
+    if (!discoveredSlugs.has(slug)) {
+      removed.push(slug)
+    }
+  }
+
+  autoEntries.sort((a, b) => a.slug.localeCompare(b.slug))
+
+  return {
+    entries: [...manualEntries, ...autoEntries],
+    added,
+    removed,
+  }
+}
