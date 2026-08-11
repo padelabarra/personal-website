@@ -8,22 +8,29 @@ const photos = [
   {
     src: '/gallery/photo-1.jpg',
     caption: 'Parker Ridge — Banff National Park, Canada',
+    position: 'center',
   },
   {
     src: '/gallery/photo-2.jpg',
     caption: 'Forest Trail — Pacific Northwest',
+    position: 'center',
   },
   {
     src: '/gallery/photo-3.jpg',
     caption: 'Yosemite National Park — California',
+    position: 'center',
   },
   {
     src: '/gallery/photo-4.jpg',
     caption: 'Abraham Lake Summit — Alberta, Canada',
+    position: 'center',
   },
   {
     src: '/gallery/photo-5.jpg',
     caption: 'Coastal Dunes — Chile',
+    // Portrait source photo — bias the crop toward the bottom so the
+    // person and dune stay in frame instead of being cropped to just sky.
+    position: 'center 90%',
   },
 ]
 
@@ -80,6 +87,7 @@ export default function PhotoSlider() {
               alt={photos[current].caption}
               fill
               className="object-cover"
+              style={{ objectPosition: photos[current].position }}
               sizes="(max-width: 768px) 100vw, 1200px"
             />
             {/* Caption overlay */}
