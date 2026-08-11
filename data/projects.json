@@ -78,38 +78,6 @@
     "draft": false
   },
   {
-    "slug": "agent_google_suite",
-    "name": "Agent Google Suite",
-    "description": "",
-    "tags": [],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
-  },
-  {
-    "slug": "Agents",
-    "name": "Agents",
-    "description": "",
-    "tags": [],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
-  },
-  {
-    "slug": "BankingClassication",
-    "name": "BankingClassication",
-    "description": "",
-    "tags": [
-      "Python"
-    ],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
-  },
-  {
     "slug": "fitness-tracker",
     "name": "Fitness Tracker",
     "description": "Marathon training dashboard for Pedro and Renatta. Tracks workouts (via Strava), biometrics (via Garmin Connect), and nutrition (manual + Telegram bot + photo).",
@@ -119,15 +87,15 @@
       "Tailwind CSS",
       "TypeScript"
     ],
-    "liveUrl": null,
+    "liveUrl": "https://fitness-tracker-iota-mocha.vercel.app/",
     "githubUrl": "https://github.com/padelabarra/fitness-tracker",
     "source": "auto",
-    "draft": true
+    "draft": false
   },
   {
     "slug": "invesment_analysis",
-    "name": "Invesment Analysis",
-    "description": "",
+    "name": "Investment Analysis",
+    "description": "Automated weekly ETF and index financial dashboard. Python pipeline (via GitHub Actions) fetches and scores market data; Next.js frontend with one-click Excel export.",
     "tags": [
       "Next.js",
       "React",
@@ -138,17 +106,22 @@
     "liveUrl": null,
     "githubUrl": "https://github.com/padelabarra/investment_dashboard",
     "source": "auto",
-    "draft": true
+    "draft": false
   },
   {
     "slug": "investment_consolidation",
     "name": "Investment Consolidation",
-    "description": "",
-    "tags": [],
+    "description": "Portfolio intelligence dashboard that parses investment statement PDFs, consolidates multiple portfolios into one view, and surfaces risk metrics and AI-powered rebalancing suggestions.",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Anthropic API"
+    ],
     "liveUrl": null,
     "githubUrl": null,
     "source": "auto",
-    "draft": true
+    "draft": false
   },
   {
     "slug": "news_feed",
@@ -160,60 +133,32 @@
     "liveUrl": null,
     "githubUrl": "https://github.com/padelabarra/news_feed",
     "source": "auto",
-    "draft": true
-  },
-  {
-    "slug": "prompt_video",
-    "name": "Prompt Video",
-    "description": "",
-    "tags": [],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
-  },
-  {
-    "slug": "property_finder",
-    "name": "Property Finder",
-    "description": "",
-    "tags": [],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
+    "draft": false
   },
   {
     "slug": "relationshipOS",
     "name": "RelationshipOS",
-    "description": "",
-    "tags": [],
-    "liveUrl": null,
-    "githubUrl": null,
-    "source": "auto",
-    "draft": true
-  },
-  {
-    "slug": "seattle_property_finder",
-    "name": "Seattle Property Finder",
-    "description": "A rental listing aggregator for Seattle apartment hunting targeting an August 2026 move-in. Fetches from Zillow, RentCast, and Realtor.com, scores listings by price/commute/walkability, and generates…",
+    "description": "Mobile-first wellness app that gamifies relationship health — passively tracks WhatsApp, call, and email interactions via a Mac daemon, scores connection health, and nudges reconnection with neglected contacts.",
     "tags": [
-      "Python"
+      "Mobile",
+      "Wellness",
+      "Automation"
     ],
     "liveUrl": null,
     "githubUrl": null,
     "source": "auto",
-    "draft": true
+    "draft": false
   },
   {
     "slug": "taskflow",
     "name": "Taskflow",
-    "description": "",
+    "description": "Website that helps create To Do List on a application scale",
     "tags": [
       "React"
     ],
-    "liveUrl": null,
+    "liveUrl": "https://pdelabarra.netlify.app/",
     "githubUrl": "https://github.com/padelabarra/taskflow",
     "source": "auto",
-    "draft": true
+    "draft": false
   }
 ]

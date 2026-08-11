@@ -20,7 +20,7 @@ const MANIFEST_PATH = path.join(REPO_ROOT, 'data', 'projects.json')
 // Folder names under PROJECTS_ROOT to skip entirely, in addition to this
 // repo's own folder (always excluded automatically by path).
 // Example: EXCLUDE = ['agent_google_suite', 'investment_consolidation']
-const EXCLUDE = []
+const EXCLUDE = ['BankingClassication']
 
 function readJsonIfExists(filePath) {
   if (!fs.existsSync(filePath)) return null
