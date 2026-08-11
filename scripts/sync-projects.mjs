@@ -31,6 +31,23 @@ function readJsonIfExists(filePath) {
   }
 }
 
+function readManifest(filePath) {
+  if (!fs.existsSync(filePath)) return []
+  let parsed
+  try {
+    parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+  } catch (err) {
+    console.error(`Refusing to run: ${filePath} is not valid JSON (${err.message}).`)
+    console.error('Fix the file by hand (or restore it with git checkout) and re-run.')
+    process.exit(1)
+  }
+  if (!Array.isArray(parsed)) {
+    console.error(`Refusing to run: ${filePath} must contain a JSON array.`)
+    process.exit(1)
+  }
+  return parsed
+}
+
 function readTextIfExists(filePath) {
   if (!fs.existsSync(filePath)) return null
   return fs.readFileSync(filePath, 'utf8')
@@ -60,7 +77,7 @@ function scanFolder(folderPath, slug) {
 
   const name = prettifyName(slug)
   const description =
-    (packageJson && packageJson.description && packageJson.description.trim()) ||
+    (packageJson && typeof packageJson.description === 'string' && packageJson.description.trim()) ||
     extractReadmeDescription(readme) ||
     ''
   const tags = detectTags({
@@ -87,12 +104,14 @@ function main() {
     discovered.push(scanFolder(folderPath, entry.name))
   }
 
-  const existing = readJsonIfExists(MANIFEST_PATH) || []
-  const { entries: merged, added, removed } = mergeManifest(existing, discovered)
+  const existing = readManifest(MANIFEST_PATH)
+  const { entries: merged, added, removed, skipped } = mergeManifest(existing, discovered)
 
-  if (added.length > 0 || removed.length > 0) {
+  const serialized = `${JSON.stringify(merged, null, 2)}\n`
+  const current = fs.existsSync(MANIFEST_PATH) ? fs.readFileSync(MANIFEST_PATH, 'utf8') : null
+  if (serialized !== current) {
     fs.mkdirSync(path.dirname(MANIFEST_PATH), { recursive: true })
-    fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(merged, null, 2)}\n`)
+    fs.writeFileSync(MANIFEST_PATH, serialized)
   }
 
   if (added.length > 0) {
@@ -102,7 +121,10 @@ function main() {
   if (removed.length > 0) {
     console.warn(`Removed ${removed.length} project(s) whose folder no longer exists: ${removed.join(', ')}`)
   }
-  if (added.length === 0 && removed.length === 0) {
+  if (skipped.length > 0) {
+    console.warn(`Skipped ${skipped.length} discovered folder(s) whose name collides with an existing manifest slug: ${skipped.join(', ')}`)
+  }
+  if (added.length === 0 && removed.length === 0 && skipped.length === 0) {
     console.log('No changes — manifest is already up to date.')
   }
 }

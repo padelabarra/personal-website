@@ -122,13 +122,21 @@ export function mergeManifest(existingEntries, discoveredAutoEntries) {
   const existingAutoBySlug = new Map(
     existingEntries.filter((e) => e.source === 'auto').map((e) => [e.slug, e])
   )
+  const manualSlugs = new Set(
+    existingEntries.filter((e) => e.source === 'manual').map((e) => e.slug)
+  )
   const discoveredSlugs = new Set(discoveredAutoEntries.map((e) => e.slug))
   const manualEntries = existingEntries.filter((e) => e.source === 'manual')
 
   const autoEntries = []
   const added = []
+  const skipped = []
 
   for (const candidate of discoveredAutoEntries) {
+    if (manualSlugs.has(candidate.slug)) {
+      skipped.push(candidate.slug)
+      continue
+    }
     const existing = existingAutoBySlug.get(candidate.slug)
     if (existing) {
       autoEntries.push(existing)
@@ -145,11 +153,12 @@ export function mergeManifest(existingEntries, discoveredAutoEntries) {
     }
   }
 
-  autoEntries.sort((a, b) => a.slug.localeCompare(b.slug))
+  autoEntries.sort((a, b) => a.slug.localeCompare(b.slug, 'en'))
 
   return {
     entries: [...manualEntries, ...autoEntries],
     added,
     removed,
+    skipped,
   }
 }

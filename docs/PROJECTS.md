@@ -28,13 +28,19 @@ Add an object directly to `data/projects.json` with `"source": "manual"` and a u
 
 Edit the `EXCLUDE` array at the top of `scripts/sync-projects.mjs` and add the folder name (e.g. `"agent_google_suite"`). This repo's own folder (`personal_website`) is always excluded automatically, regardless of `EXCLUDE`.
 
+## When a scan produces a duplicate of an existing manual entry
+
+If a folder's auto-detected slug doesn't match an existing manual entry's slug, the sync script has no way to know they describe the same project — it will add a second, `draft: true` entry alongside the manual one. If that happens, delete the auto entry from `data/projects.json` and add the folder's name to the `EXCLUDE` array in `scripts/sync-projects.mjs` so it doesn't reappear on the next run.
+
+Auto entries take their `slug` directly from the folder name (including any unusual casing or typos in the folder name itself). Renaming an auto entry's `slug` by hand is not recommended: the next sync will treat the folder as a brand-new project under its real folder name, and report the old, renamed slug as removed.
+
 ## Tag detection
 
 `scripts/lib/sync-projects-lib.mjs` exports a `TAG_RULES` lookup table mapping known `package.json` dependency names to display tags (e.g. `next` → `"Next.js"`). Add an entry there to teach the script a new tag. Projects with a `package.json` but no recognized dependency get a generic `"Node.js"` tag; projects with a `pyproject.toml` or `requirements.txt` get `"Python"`.
 
 ## Security
 
-The sync script only reads four files per folder: `package.json`, `README.md`, `pyproject.toml`, `requirements.txt`. It never recurses into subdirectories or reads any other file. Git remote URLs always have embedded credentials stripped before being written to `data/projects.json`.
+The sync script only reads four files per folder: `package.json`, `README.md`, `pyproject.toml`, `requirements.txt`. It never recurses into subdirectories or reads any other file directly; it also runs `git remote get-url origin` on the folder, which reads that folder's `.git/config`. Git remote URLs always have embedded credentials stripped before being written to `data/projects.json`.
 
 ## Testing
 

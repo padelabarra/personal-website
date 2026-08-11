@@ -172,6 +172,32 @@ test('mergeManifest removes auto entries whose folder disappeared and reports th
   assert.deepEqual(result.removed, ['old-project'])
 })
 
+test('mergeManifest skips a discovered candidate whose slug collides with an existing manual entry', () => {
+  const manual = {
+    slug: 'fitness-tracker',
+    name: 'Fitness Tracker (hand-curated)',
+    description: 'x',
+    tags: [],
+    liveUrl: null,
+    githubUrl: null,
+    source: 'manual',
+    draft: false,
+  }
+  const candidate = buildAutoEntry({
+    slug: 'fitness-tracker',
+    name: 'Fitness Tracker',
+    description: 'auto-scanned',
+    tags: [],
+    githubUrl: null,
+  })
+
+  const result = mergeManifest([manual], [candidate])
+
+  assert.deepEqual(result.entries, [manual])
+  assert.deepEqual(result.added, [])
+  assert.deepEqual(result.skipped, ['fitness-tracker'])
+})
+
 test('mergeManifest sorts auto entries alphabetically by slug after manual entries', () => {
   const manual = {
     slug: 'apocrypha',
