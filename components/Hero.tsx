@@ -66,7 +66,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Los Angeles, CA · Open to Seattle
+              Bellevue, WA
             </motion.p>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-none mb-6 tracking-tight">

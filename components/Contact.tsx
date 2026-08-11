@@ -28,7 +28,7 @@ export default function Contact() {
           Let&apos;s Talk
         </h2>
         <p className="text-muted mb-12">
-          Open to new opportunities, partnerships, and interesting conversations.
+          Open to partnerships, collaborations, and interesting conversations.
         </p>
 
         {/* Icon buttons */}
@@ -98,7 +98,7 @@ export default function Contact() {
             wakeboarding.
           </p>
           <p className="text-muted/50 text-xs">
-            Los Angeles, CA · Open to Seattle ·{' '}
+            Bellevue, WA ·{' '}
             <a
               href="mailto:pedro.de.la.barra.2026@anderson.ucla.edu"
               className="hover:text-muted transition-colors"

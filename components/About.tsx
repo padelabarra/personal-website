@@ -70,7 +70,7 @@ export default function About() {
             </p>
             <p>
               Husband to Renatta. Rower. Runner. Outdoor junkie. Bilingual — Spanish native, English
-              fluent. Los Angeles, CA. Open to Seattle.
+              fluent. Bellevue, WA.
             </p>
           </div>
         </div>
