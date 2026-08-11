@@ -3,7 +3,13 @@
     "slug": "apocrypha",
     "name": "Apocrypha",
     "description": "Venture project built during MBA. Knowledge graph middleware for enterprise AI agents — contextualizing fragmented data for LLM-powered workflows. Took to enterprise pilot stage with Domino's.",
-    "tags": ["Python", "FastAPI", "LangChain", "RAG", "Knowledge Graphs"],
+    "tags": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "RAG",
+      "Knowledge Graphs"
+    ],
     "liveUrl": null,
     "githubUrl": null,
     "source": "manual",
@@ -13,7 +19,13 @@
     "slug": "banking-classification-ml",
     "name": "BankingClassification ML",
     "description": "Machine learning pipeline for banking transaction classification. Hybrid rule-based + TF-IDF + Logistic Regression model with Streamlit dashboard for review and analytics.",
-    "tags": ["Python", "sklearn", "Pandas", "SQLite", "Streamlit"],
+    "tags": [
+      "Python",
+      "sklearn",
+      "Pandas",
+      "SQLite",
+      "Streamlit"
+    ],
     "liveUrl": null,
     "githubUrl": "https://github.com/padelabarra",
     "source": "manual",
@@ -23,7 +35,12 @@
     "slug": "mbi-financial-platform",
     "name": "MBI Financial Platform",
     "description": "Bloomberg BQL-powered dashboards and Python automation tools for a $1B+ AUM investment firm. Portfolio analytics, digital client enrollment flows, and international fund infrastructure.",
-    "tags": ["Python", "Bloomberg API", "Power BI", "SQL"],
+    "tags": [
+      "Python",
+      "Bloomberg API",
+      "Power BI",
+      "SQL"
+    ],
     "liveUrl": null,
     "githubUrl": "https://github.com/padelabarra",
     "source": "manual",
@@ -33,7 +50,13 @@
     "slug": "datacamp-ml-track",
     "name": "DataCamp ML Track",
     "description": "Completed ML Scientist Career Track — full series of Jupyter notebook exercises and projects covering supervised learning, NLP, tree-based models, and deep learning.",
-    "tags": ["Python", "Jupyter", "sklearn", "pandas", "NLP"],
+    "tags": [
+      "Python",
+      "Jupyter",
+      "sklearn",
+      "pandas",
+      "NLP"
+    ],
     "liveUrl": null,
     "githubUrl": "https://github.com/padelabarra",
     "source": "manual",
@@ -43,10 +66,154 @@
     "slug": "allfunds-investment-platform",
     "name": "AllFunds Investment Platform",
     "description": "Scaled AUM from $18M to $54M in 8 months as Product Owner. Defined product vision, pricing strategy, GTM roadmap, and built quantitative fund selection framework analyzing 85K+ securities.",
-    "tags": ["Product Strategy", "FinTech", "Operations", "Fund Selection"],
+    "tags": [
+      "Product Strategy",
+      "FinTech",
+      "Operations",
+      "Fund Selection"
+    ],
     "liveUrl": null,
     "githubUrl": null,
     "source": "manual",
     "draft": false
+  },
+  {
+    "slug": "agent_google_suite",
+    "name": "Agent Google Suite",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "Agents",
+    "name": "Agents",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "BankingClassication",
+    "name": "BankingClassication",
+    "description": "",
+    "tags": [
+      "Python"
+    ],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "fitness-tracker",
+    "name": "Fitness Tracker",
+    "description": "Marathon training dashboard for Pedro and Renatta. Tracks workouts (via Strava), biometrics (via Garmin Connect), and nutrition (manual + Telegram bot + photo).",
+    "tags": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra/fitness-tracker",
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "invesment_analysis",
+    "name": "Invesment Analysis",
+    "description": "",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Python"
+    ],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra/investment_dashboard",
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "investment_consolidation",
+    "name": "Investment Consolidation",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "news_feed",
+    "name": "News Feed",
+    "description": "Fetches macroeconomic RSS feeds, filters by keyword, generates a daily digest, and emails it as HTML — fully automated via GitHub Actions.",
+    "tags": [
+      "Python"
+    ],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra/news_feed",
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "prompt_video",
+    "name": "Prompt Video",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "property_finder",
+    "name": "Property Finder",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "relationshipOS",
+    "name": "RelationshipOS",
+    "description": "",
+    "tags": [],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "seattle_property_finder",
+    "name": "Seattle Property Finder",
+    "description": "A rental listing aggregator for Seattle apartment hunting targeting an August 2026 move-in. Fetches from Zillow, RentCast, and Realtor.com, scores listings by price/commute/walkability, and generates…",
+    "tags": [
+      "Python"
+    ],
+    "liveUrl": null,
+    "githubUrl": null,
+    "source": "auto",
+    "draft": true
+  },
+  {
+    "slug": "taskflow",
+    "name": "Taskflow",
+    "description": "",
+    "tags": [
+      "React"
+    ],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/padelabarra/taskflow",
+    "source": "auto",
+    "draft": true
   }
 ]
